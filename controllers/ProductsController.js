@@ -5,7 +5,11 @@ module.exports = {
         const products = await Product.find({})
         res.json(products)
     },
-
+    async getOne(req, res){
+        const id = req.params.id
+        const product = await Product.findById(id)
+        res.json(product)
+    },
     async addProduct(req, res){
         const {name, price, qtd} = await req.body
         const product = await Product({
@@ -45,6 +49,5 @@ module.exports = {
         }else{
             res.status(404).json({"Message": "Product not found"})
         }
-
     }
 }

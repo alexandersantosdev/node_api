@@ -11,7 +11,7 @@ const connection = mongoose.connect(url, {
     console.log('Connected to database')
 )
 .catch(
-    e => console.log(`Error traying to connect to database: ${e}`)
+    e => console.log(`Error trying to connect to database: ${e}`)
 )
 
 module.exports = connection
